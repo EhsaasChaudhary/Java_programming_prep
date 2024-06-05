@@ -63,9 +63,8 @@ public class MinStack {
                     break;
 
                 case "getmin":
-
-                myStack.sort(Comparator.naturalOrder());
-                int min = myStack.get(0);
+                    myStack.sort(Comparator.naturalOrder());
+                    int min = myStack.get(0);
                     System.out.printf("min: %d\n", min);
                     break;
 
