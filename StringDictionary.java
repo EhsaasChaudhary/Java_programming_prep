@@ -1,3 +1,4 @@
+
 /**
  * String_dictionary
  */
@@ -24,16 +25,15 @@ public class StringDictionary {
         }
         sc.close();
 
-        
         for (String word : wordDict) {
             while (inputString.contains(word)) {
                 inputString = inputString.replace(word, "");
             }
         }
 
-            if (inputString.isEmpty()) {
-                flag++;
-            }
+        if (inputString.isEmpty()) {
+            flag++;
+        }
 
         if (flag == 1) {
             System.out.println("True, the string can be separated");
