@@ -1,19 +1,19 @@
-/**
- * nonDublicateArr
- */
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
-public class nonDublicateArr {
+/**
+ * oddevensum
+ */
+public class oddevensum {
     public static void main(String[] args) {
+        int oddSum = 0;
+        int evenSum = 0;
+
        ArrayList<Integer> myArray = new ArrayList<Integer>();
        Scanner sc = new Scanner(System.in);
        System.out.print("Enter Size of Array: ");
        int arrSize = sc.nextInt();
-       
-
+    
        System.out.println("Enter Elements in array");
 
        for (int i = 0; i < arrSize; i++) {
@@ -22,17 +22,17 @@ public class nonDublicateArr {
         myArray.add(element);
        }
        sc.close();
+
        System.out.println(myArray.toString());
-
-       myArray.sort(Comparator.naturalOrder());
-       
-
-       for (int i = 0; i < myArray.size()-1; i++) {
         
-        if (myArray.get(i) == myArray.get(i+1)) {
-            myArray.remove(i);
+        for (int i = 0; i < myArray.size(); i++) {
+            if (myArray.get(i) % 2 == 0) {
+                evenSum += myArray.get(i);
+            } else {
+                oddSum += myArray.get(i);
+            }
         }
-       }
-       System.out.println(myArray.toString());
+        System.out.println("Sum of Odd Numbers: " + oddSum);
+        System.out.println("Sum of Even Numbers: " + evenSum);
     }
 }
